@@ -9,7 +9,12 @@ public class SceneLoader : MonoBehaviour {
     {
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
         Debug.Log(SceneManager.sceneCountInBuildSettings);
-        sceneIndex = sceneIndex == SceneManager.sceneCountInBuildSettings - 1 ? 0 : sceneIndex;
+        sceneIndex = sceneIndex == SceneManager.sceneCountInBuildSettings - 1 ? -1 : sceneIndex;
         SceneManager.LoadScene(sceneIndex + 1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
